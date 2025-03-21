@@ -4,7 +4,7 @@
 
     $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
 
-    $video = [
+    @$video = [
         'url' => '',
         'title' => ''
     ];
@@ -42,7 +42,7 @@
             <a class="logo" href="/"></a>
 
             <div class="cabecalho__icones">
-                <a href="./enviar-video.html" class="cabecalho__videos"></a>
+                <a href="./novo-video" class="cabecalho__videos"></a>
                 <a href="../pages/login.html" class="cabecalho__sair">Sair</a>
             </div>
         </nav>
@@ -51,9 +51,7 @@
 
     <main class="container">
 
-        <form class="container__formulario" 
-            action="<?php echo $id !== false ? '/editar-video.php?id='.$id : '/novo-video.php' ?>" 
-            method="post">
+        <form class="container__formulario" method="post">
             <h2 class="formulario__titulo">Envie um vídeo!</h3>
                 <div class="formulario__campo">
                     <label class="campo__etiqueta" for="url">Link embed</label>
